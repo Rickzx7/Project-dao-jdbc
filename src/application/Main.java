@@ -8,6 +8,7 @@ import model.entities.Seller;
 
 import java.sql.SQLOutput;
 import java.util.Date;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,7 +17,16 @@ public class Main {
 
         System.out.println("======= Test1 : Seller findByID====");
         Seller seller = sellerDao.findById(3);
-
         System.out.println(seller);
+
+        System.out.println("======Test 2: Seller findByDepartmentId====");
+        Department department = new Department(2, null);
+        List<Seller> list = sellerDao.findByDepartmentId(department);
+        for (Seller s : list) {
+            System.out.println(s);
+        }
+
+
+
     }
 }
