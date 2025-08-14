@@ -37,6 +37,14 @@ public class Main {
         sellerDao.insertSeller(newSeller);
         System.out.println("Seller inserted successfully. NEW ID: " + newSeller.getId());
 
+        System.out.println("======Test 5: Seller Update====");
+        seller = sellerDao.findById(1);
+        seller.setName("Rick master");
+        sellerDao.updateSeller(seller);
+        System.out.println("Updated successfully. ID: " + seller.getName());
+
+
+
 
     }
 }
